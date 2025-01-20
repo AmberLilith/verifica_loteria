@@ -33,3 +33,27 @@
     border: 1px solid black;
     font-size: 30px;
 }
+
+.numeros_sorteados{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.numeros_apostados{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 10px 0px 10px 0px;
+}
+
+.input_numero_sorteado, .input_numero_apostado{
+    width: 50px;
+}
+
+.div_com_botoes{
+    display: flex;
+    gap: 10px;
+    justify-content: end;
+    margin-bottom: 10px;
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -76,22 +76,62 @@
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active m-3 p-4 border" id="lotofacil-tab-pane" role="tabpanel"
                         aria-labelledby="lotofacil-tab" tabindex="0">
-                        <form>
-                            <div class="mb-3">
-                                <label for="resultado" class="form-label">Resultado Oficial</label>
-                                <input type="text" class="form-control" id="resultado" placeholder="Cole os números aqui ou insira separados por vírgula" aria-describedby="emailHelp">
-                                <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                        <div class="">
+                            <div class="div_com_botoes">
+                                <button type="button" id="botao_adiciona_jogo" class="btn btn-primary">Adicionar
+                                    Jogo</button>
+                                <button type="button" id="botao_verificar_jogos" class="btn btn-primary">Verificar Jogos</button>
                             </div>
-                            <div id="jogos_realizados">
-                                <div class="mb-3" data-jogo>
-                                    <label for="jogo_1" class="form-label">Jogo 1</label>
-                                    <input type="text" class="form-control" id="jogo_1" placeholder="Insira os números separados por vígula" jogo-realizado>
+                            <hr>
+                            <div class="mb-3">
+                                <h3>Resultado Oficial</h3>
+                                <div id="numeros_sorteados" class="numeros_sorteados">
+                                    <input type="number" min="1" step="1"  id="numero_sorteado1" class="input_numero_sorteado"  data-numero-resultado>
+                                    <input type="number" min="1" step="1"  id="numero_sorteado2" class="input_numero_sorteado"  data-numero-resultado>
+                                    <input type="number" min="1" step="1"  id="numero_sorteado3" class="input_numero_sorteado"  data-numero-resultado>
+                                    <input type="number" min="1" step="1"  id="numero_sorteado4" class="input_numero_sorteado"  data-numero-resultado>
+                                    <input type="number" min="1" step="1"  id="numero_sorteado5" class="input_numero_sorteado"  data-numero-resultado>
+                                    <input type="number" min="1" step="1"  id="numero_sorteado6" class="input_numero_sorteado"  data-numero-resultado>
+                                    <input type="number" min="1" step="1"  id="numero_sorteado7" class="input_numero_sorteado"  data-numero-resultado>
+                                    <input type="number" min="1" step="1"  id="numero_sorteado8" class="input_numero_sorteado"  data-numero-resultado>
+                                    <input type="number" min="1" step="1"  id="numero_sorteado9" class="input_numero_sorteado"  data-numero-resultado>
+                                    <input type="number" min="1" step="1"  id="numero_sorteado10" class="input_numero_sorteado"  data-numero-resultado>
+                                    <input type="number" min="1" step="1"  id="numero_sorteado11" class="input_numero_sorteado"  data-numero-resultado>
+                                    <input type="number" min="1" step="1"  id="numero_sorteado12" class="input_numero_sorteado"  data-numero-resultado>
+                                    <input type="number" min="1" step="1"  id="numero_sorteado13" class="input_numero_sorteado"  data-numero-resultado>
+                                    <input type="number" min="1" step="1"  id="numero_sorteado14" class="input_numero_sorteado"  data-numero-resultado>
+                                    <input type="number" min="1" step="1"  id="numero_sorteado15" class="input_numero_sorteado"  data-numero-resultado>
                                 </div>
                             </div>
-                            <button type="button" id="botao_adiciona_jogo" class="btn btn-primary">Adicionar
-                                Jogo</button>
-                            <button type="button" id="botao_verificar_jogos" class="btn btn-primary">Verificar Jogos</button>
-                        </form>
+                            <div id="jogos_realizados">
+                                <div id="jogo1" data-jogo>
+                                    <h3>Jogo 1</h3>
+                                <div class="numeros_apostados">                                    
+                                    <input type="number" min="1" step="1"  id="numero_apostado1_jogo1" class="input_numero_apostado"  data-numero-apostado>
+                                    <input type="number" min="1" step="1"  id="numero_apostado2_jogo1" class="input_numero_apostado"  data-numero-apostado>
+                                    <input type="number" min="1" step="1"  id="numero_apostado3_jogo1" class="input_numero_apostado"  data-numero-apostado>
+                                    <input type="number" min="1" step="1"  id="numero_apostado4_jogo1" class="input_numero_apostado"  data-numero-apostado>
+                                    <input type="number" min="1" step="1"  id="numero_apostado5_jogo1" class="input_numero_apostado"  data-numero-apostado>
+                                    <input type="number" min="1" step="1"  id="numero_apostado6_jogo1" class="input_numero_apostado"  data-numero-apostado>
+                                    <input type="number" min="1" step="1"  id="numero_apostado7_jogo1" class="input_numero_apostado"  data-numero-apostado>
+                                    <input type="number" min="1" step="1"  id="numero_apostado8_jogo1" class="input_numero_apostado"  data-numero-apostado>
+                                    <input type="number" min="1" step="1"  id="numero_apostado9_jogo1" class="input_numero_apostado"  data-numero-apostado>
+                                    <input type="number" min="1" step="1"  id="numero_apostado10_jogo1" class="input_numero_apostado"  data-numero-apostado>
+                                    <input type="number" min="1" step="1"  id="numero_apostado11_jogo1" class="input_numero_apostado"  data-numero-apostado>
+                                    <input type="number" min="1" step="1"  id="numero_apostado12_jogo1" class="input_numero_apostado"  data-numero-apostado>
+                                    <input type="number" min="1" step="1"  id="numero_apostado13_jogo1" class="input_numero_apostado"  data-numero-apostado>
+                                    <input type="number" min="1" step="1"  id="numero_apostado14_jogo1" class="input_numero_apostado"  data-numero-apostado>
+                                    <input type="number" min="1" step="1"  id="numero_apostado15_jogo1" class="input_numero_apostado"  data-numero-apostado>
+                                    <input type="number" min="1" step="1"  id="numero_apostado16_jogo1" class="input_numero_apostado"  data-numero-apostado>
+                                    <input type="number" min="1" step="1"  id="numero_apostado17_jogo1" class="input_numero_apostado"  data-numero-apostado>
+                                    <input type="number" min="1" step="1"  id="numero_apostado18_jogo1" class="input_numero_apostado"  data-numero-apostado>
+                                    <input type="number" min="1" step="1"  id="numero_apostado19_jogo1" class="input_numero_apostado"  data-numero-apostado>
+                                    <input type="number" min="1" step="1"  id="numero_apostado20_jogo1" class="input_numero_apostado"  data-numero-apostado>
+                                </div>
+                                </div>
+                            </div>
+                            
+                        </div>
                     </div>
 
                     <div class="tab-pane fade" id="lotomania-tab-pane" role="tabpanel" aria-labelledby="lotomania-tab"

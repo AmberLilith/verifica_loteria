@@ -3,59 +3,61 @@ const jogosContainer = document.querySelector("#jogos_realizados");
 const botaoAdicionaJogo = document.querySelector("#botao_adiciona_jogo");
 const botaoVerificarJogos = document.querySelector("#botao_verificar_jogos");
 
-
-const adicionarJogo = () => {
+const adicionarApostaRealizada = () => {
     const totalJogos = jogosContainer.querySelectorAll("[data-jogo]").length;
     const novoId = `jogo_${totalJogos + 1}`;
     const novoJogo = document.createElement("div");
-    novoJogo.classList.add("mb-3");
+    novoJogo.setAttribute("id", novoId);
     novoJogo.setAttribute("data-jogo", "");
-    novoJogo.setAttribute("placeholder","Insira os números separados por vígula")
-    novoJogo.innerHTML = `
-<label for="${novoId}" class="form-label">Jogo ${totalJogos + 1}</label>
-<input type="text" class="form-control" id="${novoId}" jogo-realizado>`;
-
+    novoJogo.setAttribute("placeholder","Insira os números separados por vígula");
+    const h3 = document.createElement("h3");
+    h3.textContent = `Jogo ${totalJogos + 1}`;
+    novoJogo.appendChild(h3);
+    const divNumerosApostados = document.createElement("div");
+    divNumerosApostados.classList.add("numeros_apostados");
+    for(let i = 0; i < 20;i++){
+        const input = document.createElement('input');
+        input.setAttribute("type", "number");
+        input.setAttribute("min", "1");
+        input.setAttribute("step", "1");
+        input.setAttribute("id", `numero_apostado${i + 1}_jogo${totalJogos + 1}`);
+        input.classList.add("input_numero_apostado");
+        divNumerosApostados.appendChild(input);
+    }
+    novoJogo.appendChild(divNumerosApostados)
     jogosContainer.appendChild(novoJogo);
 };
 
-const dividirEmPares = (string) => {
-    const resultado = [];
-    for (let i = 0; i < string.length; i += 2) {
-        resultado.push(string.slice(i, i + 2));
-    }
-    return resultado;
-}
+const obtemApostas = () =>{
+    const apostas = [];
+    const divsNumerosApostados = document.querySelectorAll(".numeros_apostados");
 
-const normaliza = (string) => {
-    string = string.replaceAll(" ","");
-    if (string[0] == ",") {
-        string = string.slice(1);
-    }
+    divsNumerosApostados.forEach(div => { 
+        const inputsNumerosApostados = Array.from(div.querySelectorAll(".input_numero_apostado"));
+
+        const numerosApostados = inputsNumerosApostados
+            .map(input => input.value)
+            .filter(valor => valor !== "");
+
+        if (numerosApostados.length > 0) { 
+            apostas.push(numerosApostados); 
+        }
+    });
     
-    if ((string[string.length - 1]) == ",") {
-        string = string.slice(0, -1);
-    }
-
-    return string
+    return apostas
 }
 
-const obtemJogosRealizados = () => {
-    const inputsJogosRealizados = jogosContainer.querySelectorAll("[jogo-realizado]");
-    let jogosRealizados = [];
-    for (const jogo of inputsJogosRealizados) {
-        console.log(jogo.value.split(","))
-        jogosRealizados.push(jogo.value.split(","));
-    }
-    return jogosRealizados;
+const obtemNumerosSorteados = () =>{
+    const divNumerosSorteados = document.querySelector("#numeros_sorteados");
+    const inputsNumerosSorteados = divNumerosSorteados.querySelectorAll("[data-numero-resultado]");
+    return Array.from(inputsNumerosSorteados).map(input => input.value).filter(valor => valor != "");
 }
 
 const verificaJogosRealizados = () => {
     const jogosVerificados = document.querySelector("#verificacoes");
     jogosVerificados.replaceChildren()
-    let resultado = document.querySelector("#resultado").value
-    resultado = normaliza(resultado);
-    resultado = resultado.includes(",") ? resultado.split(",") : dividirEmPares(resultado);
-    const jogosRealizados = obtemJogosRealizados();
+    let resultado = obtemNumerosSorteados()
+    const jogosRealizados = obtemApostas();
     let acertos = []
     let contador = 0
     for (const jogo of jogosRealizados) {
@@ -95,9 +97,9 @@ const exibeVerificacaoJogo = (nomeJogo, resultado, jogo, acertos) => {
 }
 
 const ver = () => {
-    console.log(normaliza("s45 8 4,"))
+    console.log(obtemApostas())
 }
 
-botaoAdicionaJogo.addEventListener("click", adicionarJogo);
+botaoAdicionaJogo.addEventListener("click", adicionarApostaRealizada);
 botaoVerificarJogos.addEventListener("click", verificaJogosRealizados);
 //});
