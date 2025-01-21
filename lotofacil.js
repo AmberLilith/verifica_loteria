@@ -1,4 +1,4 @@
-//document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
 const jogosContainer = document.querySelector("#jogos_realizados");
 const botaoAdicionaJogo = document.querySelector("#botao_adiciona_jogo");
 const botaoVerificarJogos = document.querySelector("#botao_verificar_jogos");
@@ -179,4 +179,4 @@ botaoAddNrsApostadosDigitadosJuntosJogo1.addEventListener("click", () => {
 botaoLimpaNumerosApostadosJogo1.addEventListener("click", () =>{
     limpaNumeros("numeros_apostados_jogo1", "input_numero_apostado","input_numeros_apostados_digitados_juntos_jogo1")
 })
-
+})
